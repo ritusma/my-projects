@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h1 id="title">Survey Form</h1>
+<h3 id="purpose">Exploring Programming Education, Skills, and Career Attainment</h3>
+<p id="description">Please fill out the survey form below:</p>
+
+<form id="survey-form" action="#" method="post">
+    <fieldset>
+        <legend>1. Have you ever worked in a programming field?</legend>
+        <label for="worked-yes" class="radio-label">Yes <input type="radio" id="worked-yes" name="programming-experience" value="yes" required></label>
+
+        <label for="worked-no" class="radio-label">No <input type="radio" id="worked-no" name="programming-experience" value="no"></label>
+
+        <p id="ineligible-message" style="display: none" class="hidden-message">Thank you for your interest. This survey is intended for individuals with prior work experience in a programming field. Your responses will not be required.</p>
+    </fieldset>
+
+    <fieldset>
+        <legend>2. Your Information</legend>
+        <label for="name" id="name-label">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required pattern="^[A-Za-z\s]+$">
+
+        <label for="email" id="email-label">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="number" id="number-label">Age:</label>
+        <input type="number" id="number" name="age" placeholder="Enter your age" min="18" max="100" required>
+    </fieldset>
+
+    <fieldset>
+        <legend>3. Current employment status:</legend>
+        <select id="dropdown" name="employment-status" required>
+            <option value="" selected disabled>(Select one)</option>
+            <option value="full-time">Employed full-time</option>
+            <option value="part-time">Employed part-time</option>
+            <option value="self-employed">Self-employed or freelancing</option>
+            <option value="seeking-employment">Unemployed and actively seeking employment</option>
+            <option value="not-seeking-employment">Unemployed and not actively seeking employment</option>
+            <option value="student">Student (not employed)</option>
+            <option value="retired">Retired</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" id="dropdown-other" style="display: none" name="employment-status-other" placeholder="Please specify" class="hidden-input">
+    </fieldset>
+
+    <fieldset>
+        <legend>4. Which of the following educational paths have you pursued? (Select all that apply)</legend>
+        <label for="education-bachelors"><input type="checkbox" id="education-bachelors" name="education-paths" value="bachelor's degree"> Bachelor's degree</label>
+        <label for="education-masters"><input type="checkbox" id="education-masters" name="education-paths" value="master's degree"> Master's degree</label>
+        <label for="education-bootcamp"><input type="checkbox" id="education-bootcamp" name="education-paths" value="bootcamp certificate"> Bootcamp certificate</label>
+        <label for="education-self-taught"><input type="checkbox" id="education-self-taught" name="education-paths" value="self-taught"> Self-taught</label>
+        <label for="education-other"><input type="checkbox" id="education-other" name="education-paths" value="other"> Other</label>
+        <input type="text" id="education-other-input" style="display: none" name="education-other-input" placeholder="Please specify" class="hidden-input">
+    </fieldset>
+
+    <fieldset>
+        <legend>5. If you are currently employed, on a scale from 1 to 5, how satisfied are you with your role?</legend>
+        <label for="satisfaction-1" class="radio-label">1 <input type="radio" id="satisfaction-1" name="satisfaction" value="1" required></label>
+        <label for="satisfaction-2" class="radio-label">2 <input type="radio" id="satisfaction-2" name="satisfaction" value="2" required></label>
+        <label for="satisfaction-3" class="radio-label">3 <input type="radio" id="satisfaction-3" name="satisfaction" value="3" required></label>
+        <label for="satisfaction-4" class="radio-label">4 <input type="radio" id="satisfaction-4" name="satisfaction" value="4" required></label>
+        <label for="satisfaction-5" class="radio-label">5 <input type="radio" id="satisfaction-5" name="satisfaction" value="5" required></label>
+    </fieldset>
+
+    <fieldset>
+        <legend>6. If you are currently employed, which field do you work in?</legend>
+        <select id="employment-field" name="employment-field" required>
+            <option value="" selected disabled>(Select one)</option>
+            <option value="software_development">Software Development</option>
+            <option value="data_analysis">Data Analysis</option>
+            <option value="web_development">Web Development</option>
+            <option value="mobile_app_development">Mobile App Development</option>
+            <option value="game_development">Game Development</option>
+            <option value="ai_ml">Artificial Intelligence / Machine Learning</option>
+            <option value="devops">DevOps</option>
+            <option value="cyber-security">Cyber-security</option>
+            <option value="other">Other</option>
+        </select>
+        <input type="text" id="employment-field-other" style="display: none" name="employment-field-other" placeholder="Please specify" class="hidden-input">
+    </fieldset>
+
+    <fieldset>
+        <legend>7. What is your preferred method(s) to learn new programming skills? (Select all that apply)</legend>
+        <label for="learning-online-courses"><input type="checkbox" id="learning-online-courses" name="learning-methods" value="online courses"> Online courses</label>
+        <label for="learning-books"><input type="checkbox" id="learning-books" name="learning-methods" value="books"> Books</label>
+        <label for="learning-mentoring"><input type="checkbox" id="learning-mentoring" name="learning-methods" value="mentoring"> Mentoring</label>
+        <label for="learning-workshops"><input type="checkbox" id="learning-workshops" name="learning-methods" value="workshops"> Workshops</label>
+        <label for="learning-online-community"><input type="checkbox" id="learning-online-community" name="learning-methods" value="online community"> Online community (forums, Stack Overflow)</label>
+        <label for="learning-video-tutorials"><input type="checkbox" id="learning-video-tutorials" name="learning-methods" value="video tutorials"> Video tutorials</label>
+        <label for="learning-code-challenges"><input type="checkbox" id="learning-code-challenges" name="learning-methods" value="code challenges"> Code challenges and practice</label>
+        <label for="learning-coding-bootcamps"><input type="checkbox" id="learning-coding-bootcamps" name="learning-methods" value="coding bootcamps"> Coding bootcamps</label>
+        <label for="learning-tech-conferences"><input type="checkbox" id="learning-tech-conferences" name="learning-methods" value="tech conferences and meetups"> Tech conferences and meetups</label>
+        <label for="learning-other"><input type="checkbox" id="learning-other" name="learning-methods" value="other"> Other</label>
+        <input type="text" id="learning-other-input" style="display: none" name="learning-other-input" placeholder="Please specify" class="hidden-input">
+    </fieldset>
+
+    <fieldset>
+        <legend>8. Please write down the most relevant milestones and achievements in your career:</legend>
+        <textarea id="achievements" name="achievements" placeholder="Enter text"></textarea>
+    </fieldset>
+
+    <input type="submit" id="submit" value="Submit">
+</form>
+
+<script>
+    const workedYesRadio = document.getElementById('worked-yes');
+    const workedNoRadio = document.getElementById('worked-no');
+    const ineligibleMessage = document.getElementById('ineligible-message');
+    const submitButton = document.getElementById('submit');
+
+    workedYesRadio.addEventListener('change', function () {
+        if (workedYesRadio.checked) {
+            ineligibleMessage.style.display = 'none';
+            submitButton.disabled = false;
+        }
+    });
+
+    workedNoRadio.addEventListener('change', function () {
+        if (workedNoRadio.checked) {
+            ineligibleMessage.style.display = 'block';
+            submitButton.disabled = true;
+        } else {
+            ineligibleMessage.style.display = 'none';
+            submitButton.disabled = false;
+        }
+    });
+
+    const employmentStatusDropdown = document.getElementById('dropdown');
+    const employmentStatusOtherInput = document.getElementById('dropdown-other');
+
+    employmentStatusDropdown.addEventListener('change', function () {
+        if (employmentStatusDropdown.value === 'other') {
+            employmentStatusOtherInput.style.display = 'block';
+        } else {
+            employmentStatusOtherInput.style.display = 'none';
+        }
+    });
+
+    const employmentFieldDropdown = document.getElementById('employment-field');
+    const employmentFieldOtherInput = document.getElementById('employment-field-other');
+
+    employmentFieldDropdown.addEventListener('change', function () {
+        if (employmentFieldDropdown.value === 'other') {
+            employmentFieldOtherInput.style.display = 'block';
+        } else {
+            employmentFieldOtherInput.style.display = 'none';
+        }
+    });
+
+    const educationOtherCheckbox = document.getElementById('education-other');
+    const educationOtherInput = document.getElementById('education-other-input');
+
+    educationOtherCheckbox.addEventListener('change', function () {
+        if (educationOtherCheckbox.checked) {
+            educationOtherInput.style.display = 'block';
+        } else {
+            educationOtherInput.style.display = 'none';
+        }
+    });
+
+    const learningOtherCheckbox = document.getElementById('learning-other');
+    const learningOtherInput = document.getElementById('learning-other-input');
+
+    learningOtherCheckbox.addEventListener('change', function () {
+        if (learningOtherCheckbox.checked) {
+            learningOtherInput.style.display = 'block';
+        } else {
+            learningOtherInput.style.display = 'none';
+        }
+    });
+
+    document.getElementById('survey-form').addEventListener('submit', function (event) {
+        const emailInput = document.getElementById('user-email');
+        const emailValid = validateEmail(emailInput.value);
+
+        const educationPathsCheckboxes = document.querySelectorAll('input[name="education-paths"]');
+        let atLeastOneChecked = false;
+
+        for (const checkbox of educationPathsCheckboxes) {
+            if (checkbox.checked) {
+                atLeastOneChecked = true;
+                break;
+            }
+        }
+
+        const learningMethodsCheckboxes = document.querySelectorAll('input[name="learning-methods"]');
+        let atLeastOneCheckedLearning = false;
+
+        for (const checkbox of learningMethodsCheckboxes) {
+            if (checkbox.checked) {
+                atLeastOneCheckedLearning = true;
+                break;
+            }
+        }
+
+        if (!emailValid) {
+            alert('Please enter a valid email address.');
+            event.preventDefault();
+        } else if (!atLeastOneChecked) {
+            alert('Please select at least one educational path.');
+            event.preventDefault();
+        } else if (!atLeastOneCheckedLearning) {
+            alert('Please select at least one learning method.');
+            event.preventDefault();
+        }
+    });
+
+    function validateEmail(email) {
+        const emailRegex = /^\S+@\S+\.\S+$/;
+        return emailRegex.test(email);
+    }
+</script>
+</body>
+</html>
