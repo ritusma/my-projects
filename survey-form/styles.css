@@ -5,7 +5,7 @@ body {
   color: black;
   font-family: Google;
   font-size: 20px;
-  background-image: url(https://static01.nyt.com/images/2023/06/05/opinion/02Manjoo-1/02Manjoo-1-articleLarge.jpg?quality=75&auto=webp&disable=upscale);
+  background-image: url(background-image.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
@@ -17,7 +17,6 @@ form {
   margin: 0 auto;
   padding-bottom: 3rem;
   background-color: white;
-  opacity: 90%;
 }
 
 h1, h3, p {
@@ -38,7 +37,7 @@ h1, h3, p {
 fieldset {
   padding: 1rem 0;
   margin: 1.5rem;
-  border: 5px outset #a3c2c2;
+  border: 5px outset #d6f5d6;
   max-width: 750px;
 }
 
@@ -65,7 +64,8 @@ textarea, select {
   display: flex;
   justify-content: center;
   background-color: #001a00;
-  color: #bbff99;
+  opacity: 90%;
+  color: #84e184;
   font-size: 18px;
   font-weight: bold;
 }
@@ -88,8 +88,7 @@ p {
 }
 
 h1 {
-  color: white;
-  background-color: black;
+  color: #5db863;
   opacity: 90%;
   width: 40%;
   min-width: 150px;
